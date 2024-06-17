@@ -1,21 +1,18 @@
-// // arrays
-// let names = ["luigi", "mario", "yoshi"];
-// names.push('frog');
-// names.splice(2,1);
-// let ages = [30, 25, 40];
-// ages.push(45);
-// let mix = ['dante', 30, true];
-// mix.push('apple');
-// mix.push(60);
-// console.log(mix);
-// mix[0] = 100;
-// mix[1] = 'flesh';
-// console.log(mix);
-// //objects
-// let sybrite = {
-//     name: 'ghost',
-//     age: 25,
-//     isMarried: false
-// }
-// // sybrite.age = 'a';
-// sybrite.age = 30;
+// explicit types
+var character;
+var age;
+var isLoggedIn;
+age = 45;
+// arrays
+var ninjas = [];
+ninjas.push('luigi');
+// union types
+var mixed = [];
+mixed.push(true);
+mixed.push('hello');
+mixed.push(50);
+var uid;
+// objects
+var objOne;
+objOne = { name: 'luigi', age: 45 };
+var objTwo;
