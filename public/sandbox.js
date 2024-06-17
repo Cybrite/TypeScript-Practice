@@ -3,6 +3,7 @@ let greet;
 greet = () => {
     console.log("hello there");
 };
+// const add = (a: number, b: number, c?: number | string ): void => {
 const add = (a, b, c = 10) => {
     console.log(a + b);
     console.log(c);

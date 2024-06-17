@@ -4,6 +4,7 @@ greet = () => {
   console.log("hello there");
 };
 
+// const add = (a: number, b: number, c?: number | string ): void => {
 const add = (a: number, b: number, c: number | string = 10): void => {
   console.log(a + b);
   console.log(c);
