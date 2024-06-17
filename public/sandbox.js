@@ -1,15 +1,7 @@
 "use strict";
-let greet;
-greet = () => {
-    console.log("hello there");
+const logoDetails = (uid, item) => {
+    console.log(`${item} has a  uid of ${uid}`);
 };
-// const add = (a: number, b: number, c?: number | string ): void => {
-const add = (a, b, c = 10) => {
-    console.log(a + b);
-    console.log(c);
+const greet = (user) => {
+    console.log(`${user.name} says Hello`);
 };
-add(5, 10, "50");
-const minus = (a, b) => {
-    return a - b;
-};
-let result = minus(5, 2); // automatically assigned types

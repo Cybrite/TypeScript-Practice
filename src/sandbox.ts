@@ -1,19 +1,10 @@
-let greet: Function;
+type StrOrNum = string | number;
+type objWithName = { name: string; uid: StrOrNum };
 
-greet = () => {
-  console.log("hello there");
+const logoDetails = (uid: StrOrNum, item: string) => {
+  console.log(`${item} has a  uid of ${uid}`);
 };
 
-// const add = (a: number, b: number, c?: number | string ): void => {
-const add = (a: number, b: number, c: number | string = 10): void => {
-  console.log(a + b);
-  console.log(c);
+const greet = (user: objWithName) => {
+  console.log(`${user.name} says Hello`);
 };
-
-add(5, 10, "50");
-
-const minus = (a: number, b: number): number => {
-  return a - b;
-};
-
-let result = minus(5, 2); // automatically assigned types
