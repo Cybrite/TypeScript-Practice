@@ -1,20 +1,7 @@
-"use strict";
 // const anchor = document.querySelector('a');
 // console.log(anchor?.href);
 //classes
-class Invoice {
-    //   readonly client: string;
-    //   private details: string;
-    //   public amount: number;
-    constructor(client, details, amount) {
-        this.client = client;
-        this.details = details;
-        this.amount = amount;
-    }
-    format() {
-        return `${this.client} owns $${this.amount} for ${this.details}`;
-    }
-}
+import { Invoice } from "./classes/Invoice.js";
 const invOne = new Invoice("mario", "work on marios cart", 500);
 const invTwo = new Invoice("luigi", "work on luigi cart", 1500);
 let invoices = [];
