@@ -1,8 +1,33 @@
-const anchor = document.querySelector('a');
+// const anchor = document.querySelector('a');
 
-console.log(anchor?.href);
+// console.log(anchor?.href);
 
-// const form = document.querySelector('form')!; // to let TS know about certainity
+//classes
+class Invoice {
+    client : string ;
+    details : string;
+    amount : number;
+
+    constructor(c : string, d : string, a : number){
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+
+    format(){
+        return `${this.client} owns $${this.amount} for ${this.details}`
+    }
+}
+
+const invOne = new Invoice('mario','work on marios cart', 500);
+const invTwo = new Invoice('luigi','work on luigi cart', 1500);
+
+let invoices : Invoice[] = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+
+console.log(invoices);
+
 const form = document.querySelector('.new-item-form') as HTMLFormElement; //type casting
 console.log(form.children)
 
