@@ -1,5 +1,21 @@
 // const anchor = document.querySelector('a');
 // console.log(anchor?.href);
+const me = {
+    name: 'Max',
+    age: 20,
+    speak(text) {
+        console.log(text);
+    },
+    spend(amount) {
+        console.log(amount);
+        return amount;
+    },
+};
+console.log(me);
+const greetPerson = (person) => {
+    console.log('hello', person.name);
+};
+greetPerson(me);
 //classes
 import { Invoice } from "./classes/Invoice.js";
 const invOne = new Invoice("mario", "work on marios cart", 500);

@@ -1,6 +1,34 @@
 // const anchor = document.querySelector('a');
 // console.log(anchor?.href);
 
+//interfaces
+interface IsPerson{
+  name: string;
+  age : number;
+  speak(a : string) : void;
+  spend(a : number) : number;
+}
+
+const me : IsPerson = {
+  name : 'Max',
+  age : 20,
+  speak (text : string) : void {
+    console.log(text);
+  },
+  spend (amount : number) : number {
+    console.log(amount);
+    return amount;
+  },
+}
+
+console.log(me);
+
+const greetPerson = (person : IsPerson) => {
+  console.log('hello', person.name);
+}
+
+greetPerson(me);
+
 //classes
 import { Invoice } from "./classes/Invoice.js";
 
