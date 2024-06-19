@@ -28,6 +28,7 @@ const type = document.querySelector("#type");
 const tofrom = document.querySelector("#toform");
 const details = document.querySelector("#details");
 const amount = document.querySelector("#amount");
+const ul = document.querySelector('ul');
 form.addEventListener('submit', (e) => {
     e.preventDefault;
     let doc;

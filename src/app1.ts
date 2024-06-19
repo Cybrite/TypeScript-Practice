@@ -41,6 +41,8 @@ const tofrom = document.querySelector("#toform") as HTMLInputElement;
 const details = document.querySelector("#details") as HTMLInputElement;
 const amount = document.querySelector("#amount") as HTMLInputElement;
 
+const ul = document.querySelector('ul');
+
 form.addEventListener('submit', (e: Event) => {
   e.preventDefault;
 
