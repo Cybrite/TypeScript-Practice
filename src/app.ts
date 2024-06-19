@@ -28,23 +28,21 @@ const list = new ListTemplate(ul);
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
 
+  let value: [string, string, number] = [
+    tofrom.value,
+    details.value,
+    amount.valueAsNumber,
+  ];
+
   let doc: HasFormatter;
   if (type.value === "invoice") {
-    doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+    doc = new Invoice(...value);
   } else {
-    doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+    doc = new Payment(...value);
   }
 
   list.render(doc, type.value, "start");
 });
-
-
-
-
-
-
-
-
 
 // // Generics
 // const addUID = <T extends object>(obj: T) => {
@@ -83,30 +81,37 @@ form.addEventListener("submit", (e: Event) => {
 
 // console.log(docThree, docFour, docFive);
 
-
-
-
-
 // ENUMS
-enum ResourceType {BOOK, FILM, AUTHOR, DIRECTOR, PERSON}
-// each keyword is a number
+// enum ResourceType {BOOK, FILM, AUTHOR, DIRECTOR, PERSON}
+// // each keyword is a number
 
-interface Resources<T> {
-  uid: number;
-  resourceType: number;
-  data: T;
-}
+// interface Resources<T> {
+//   uid: number;
+//   resourceType: number;
+//   data: T;
+// }
 
-const docThree: Resources<object> = {
-  uid: 1,
-  resourceType : ResourceType.BOOK,
-  data: {title : 'cook of the hook'},
-};
+// const docThree: Resources<object> = {
+//   uid: 1,
+//   resourceType : ResourceType.BOOK,
+//   data: {title : 'cook of the hook'},
+// };
 
-const docFour: Resources<object> = {
-  uid: 2,
-  resourceType : ResourceType.PERSON,
-  data: { name: "agent", age: 40, work: "spy" },
-};
+// const docFour: Resources<object> = {
+//   uid: 2,
+//   resourceType : ResourceType.PERSON,
+//   data: { name: "agent", age: 40, work: "spy" },
+// };
 
-console.log(docThree, docFour);
+// console.log(docThree, docFour);
+
+// Tuples
+
+let arr = ["ryu", 25, true];
+arr[0] = 1;
+arr[1] = false;
+arr[2] = "yoshi";
+
+let tup: [string, number, boolean] = ["ryu", 25, true];
+// tup[0] = false;
+tup[0] = "kia";
