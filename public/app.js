@@ -1,6 +1,6 @@
-import { Invoice } from './classes/Invoice.js';
-import { ListTemplate } from './classes/ListTemplate.js';
-import { Payment } from './classes/Payment.js';
+import { Invoice } from "./classes/Invoice.js";
+import { ListTemplate } from "./classes/ListTemplate.js";
+import { Payment } from "./classes/Payment.js";
 // let docOne: HasFormatter;
 // let docTwo: HasFormatter;
 // docOne = new Invoice('yoshi', 'web work', 250);
@@ -8,23 +8,47 @@ import { Payment } from './classes/Payment.js';
 // let docs: HasFormatter[] = [];
 // docs.push(docOne);
 // docs.push(docTwo);
-const form = document.querySelector('.new-item-form');
+const form = document.querySelector(".new-item-form");
 console.log(form.children);
 // inputs
-const type = document.querySelector('#type');
-const tofrom = document.querySelector('#tofrom');
-const details = document.querySelector('#details');
-const amount = document.querySelector('#amount');
-const ul = document.querySelector('ul');
+const type = document.querySelector("#type");
+const tofrom = document.querySelector("#tofrom");
+const details = document.querySelector("#details");
+const amount = document.querySelector("#amount");
+const ul = document.querySelector("ul");
 const list = new ListTemplate(ul);
-form.addEventListener('submit', (e) => {
+form.addEventListener("submit", (e) => {
     e.preventDefault();
     let doc;
-    if (type.value === 'invoice') {
+    if (type.value === "invoice") {
         doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
     }
     else {
         doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
     }
-    list.render(doc, type.value, 'start');
+    list.render(doc, type.value, "start");
 });
+// Generics
+const addUID = (obj) => {
+    let uid = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { uid });
+};
+let docOne = addUID({ name: "ninja", age: 40 });
+console.log(docOne.name);
+const docThree = {
+    uid: 1,
+    resourceName: "person1",
+    // data: { name: "ninja", age: 40, work: "spy" },
+    data: "ninja",
+};
+const docFour = {
+    uid: 2,
+    resourceName: "person2",
+    data: { name: "agent", age: 40, work: "spy" },
+};
+const docFive = {
+    uid: 3,
+    resourceName: "person3",
+    data: ['ninja', 'agent', 'mario'],
+};
+console.log(docThree, docFour, docFive);
